@@ -3,85 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-key="navHome">Home - Ayat's Halal Support</title>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="description" content="Support Ayat's ad-free Islamic content creation. Donate via Bkash or Nagad.">
-    <!-- Lottie Player -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- Twemoji -->
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <title>💖 Tech with Ayat - Donate Now! 💸</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-light-olive: #C2C094;
+            --color-darker-olive: #A9A587;
+            --color-deep-purple: #390040;
+            --color-bright-purple: #730071;
+            --color-muted-pink: #DC9596;
+            
+            --font-primary: 'Poppins', sans-serif;
+            --text-light: #f0f0f0;
+            --text-dark: #1a1a1a; /* Darker text for better contrast on light buttons */
+            
+            /* New theme colors using the palette */
+            --bg-gradient-start: #2a002d; /* Darker than deep-purple */
+            --bg-gradient-mid: var(--color-deep-purple);
+            --bg-gradient-end: var(--color-bright-purple);
+
+            --card-bg: rgba(26, 10, 36, 0.75); /* Dark, slightly translucent purple */
+            --card-border: rgba(220, 149, 150, 0.5); /* Muted pink, translucent */
+            --card-shadow: rgba(220, 149, 150, 0.2);
+            
+            --button-mobile-bg: linear-gradient(135deg, var(--color-light-olive), var(--color-darker-olive));
+            --button-mobile-text: var(--text-dark);
+            --button-mobile-hover-bg: linear-gradient(135deg, var(--color-darker-olive), #c9c6a5);
+
+
+            --button-tablet-bg: linear-gradient(135deg, var(--color-muted-pink), #e0a2a8);
+            --button-tablet-text: var(--text-dark);
+            --button-tablet-hover-bg: linear-gradient(135deg, #e0a2a8, #e8b9bd);
+
+            --button-pc-bg: linear-gradient(135deg, var(--color-bright-purple), #8f008c);
+            --button-pc-text: var(--text-light);
+            --button-pc-hover-bg: linear-gradient(135deg, #8f008c, #a3009f);
+            
+            --glow-color: var(--color-muted-pink);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-light);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(-45deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end), var(--color-deep-purple));
+            background-size: 400% 400%;
+            animation: animatedGradient 20s ease infinite;
+            overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
+        }
+
+        @keyframes animatedGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 30px 40px;
+            border-radius: 15px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 8px 32px 0 var(--card-shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            max-width: 700px;
+            width: 100%;
+            animation: fadeInSlideUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            margin-bottom: 25px;
+            animation: elementFadeIn 1s 0.2s ease-out forwards;
+            opacity: 0;
+        }
+
+        .logo {
+            max-width: 200px; /* Adjusted size */
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px; /* Slight rounding for the logo if it's square */
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: var(--color-light-olive);
+            margin-bottom: 10px;
+            font-size: 2.2em; /* Responsive font size could be added */
+            font-weight: 700;
+        }
+
+        .emoji-spin {
+            display: inline-block;
+            animation: subtleSpinWobble 4s ease-in-out infinite;
+        }
+
+        @keyframes subtleSpinWobble {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.05) translateY(-2px); }
+            50% { transform: rotate(-5deg) scale(1) translateY(0px); }
+            75% { transform: rotate(3deg) scale(1.03) translateY(-1px); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: var(--color-muted-pink);
+            font-weight: 300;
+            animation: elementFadeIn 1s 0.4s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .donation-options {
+            margin-bottom: 30px;
+            animation: elementFadeIn 1s 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .donation-options h2 {
+            color: var(--color-light-olive);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between buttons */
+        }
+
+        .btn-device {
+            display: inline-block;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px; /* Pill shape */
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: relative; /* For potential pseudo-elements if needed */
+            overflow: hidden; /* For effects within bounds */
+        }
+        .btn-device .emoji { /* If you want to style emojis in buttons */
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .btn-mobile { background: var(--button-mobile-bg); color: var(--button-mobile-text); }
+        .btn-mobile:hover { background: var(--button-mobile-hover-bg); transform: translateY(-4px) scale(1.03); box-shadow: 0 6px 15px rgba(169,165,135,0.4); }
+        
+        .btn-tablet { background: var(--button-tablet-bg); color: var(--button-tablet-text); }
+        .btn-tablet:hover { background: var(--button-tablet-hover-bg); transform: translateY(-4px) scale(1.03); box-shadow: 0 6px 15px rgba(220,149,150,0.4); }
+        .btn-tablet .tablet-emoji { display: inline-block; animation: screenGlow 2s infinite alternate; }
+
+        @keyframes screenGlow {
+            0% { text-shadow: 0 0 2px var(--text-dark); }
+            100% { text-shadow: 0 0 8px var(--text-light); }
+        }
+        
+        .btn-pc { background: var(--button-pc-bg); color: var(--button-pc-text); }
+        .btn-pc:hover { background: var(--button-pc-hover-bg); transform: translateY(-4px) scale(1.03); box-shadow: 0 6px 15px rgba(115,0,113,0.5); }
+
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            animation: elementFadeIn 1s 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes elementFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer a {
+            color: var(--color-light-olive);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease-in-out, text-shadow 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--color-muted-pink);
+            text-shadow: 0 0 5px var(--color-muted-pink);
+            text-decoration: underline;
+        }
+        
+        footer .terms-link {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .button-group {
+                flex-direction: row; /* Buttons side-by-side on larger screens */
+                justify-content: center;
+            }
+            .btn-device {
+                padding: 15px 20px; /* Adjust padding for row layout */
+                margin: 0 5px;
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 20px 25px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .intro-text {
+                font-size: 1em;
+            }
+            .btn-device {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo" data-lang-key="logoText">Ayat's Halal Content <span class="emoji">🌟</span></a>
-        <div class="header-controls">
-            <div class="lang-switch" id="lang-toggle">
-                <span id="lang-en" class="active-lang">EN</span>
-                <span id="lang-bn">BN</span>
-            </div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
-        </div>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="index.html" class="active-nav" data-lang-key="navHome">Home</a></li>
-                <li><a href="about.html" data-lang-key="navAbout">About Me</a></li>
-                <li><a href="why-donate.html" data-lang-key="navWhyDonate">Why I Need Donation</a></li>
-                <li><a href="faq.html" data-lang-key="navFAQ">FAQ / Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <img src="https://i.ibb.co/8gjM2v1b/TWA-DONATION-5-27-2025.png" alt="Tech with Ayat Donation Logo" class="logo">
+            <h1>Support Tech with Ayat <span class="emoji-spin">🚀</span></h1>
+        </header>
 
-    <main class="page-content">
-        <div class="container">
-            <section class="welcome-section">
-                <div id="lottie-welcome" aria-label="Animated welcome gesture"></div>
-                <h1 id="welcome-text" data-lang-key="welcomeMessage">
-                    Assalamu Alaikum, I am Ayat! If you like my content, support me to keep going without relying on ads! 🌙💖
-                </h1>
-                <p id="bangla-intro" data-lang-key="banglaWelcome" style="display: none;">
-                    YouTube থেকে ইনকাম হারাম হতে পারে, তাই আমি অ্যাড-ফ্রি, কোয়ালিটি ইসলামিক ভিডিও বানাই—আপনারা যদি আমাকে সাহায্য করতে চান, এই ওয়েবসাইট থেকে ডোনেট করতে পারেন ইনশাআল্লাহ!
-                </p>
-            </section>
+        <main>
+            <p class="intro-text">
+                Your awesome generosity 🌟 helps us keep the tech magic alive! ✨ <br>
+                Fuel our passion for creating top-notch tutorials, insightful content, and helpful resources for the tech community. Every bit helps us grow! 🌱
+            </p>
 
-            <section class="donate-section">
-                <h2 data-lang-key="donateTitle">Support My Work 🙏</h2>
-                <form id="donate-form">
-                    <div class="form-group">
-                        <label for="donor-name" data-lang-key="donorNameLabel">Your Name (Optional)</label>
-                        <input type="text" id="donor-name" name="donor-name" data-lang-key-placeholder="donorNamePlaceholder" placeholder="e.g., Abdullah">
-                    </div>
-                    <div class="form-group">
-                        <label for="donor-description" data-lang-key="donorDescriptionLabel">Message (Optional)</label>
-                        <textarea id="donor-description" name="donor-description" data-lang-key-placeholder="donorDescriptionPlaceholder" placeholder="May Allah bless you!"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit" data-lang-key="submitDonation">Send Support Note <span class="emoji">💌</span></button>
-                </form>
-                <div id="form-status"></div>
-
-                <div class="payment-methods">
-                    <h3 data-lang-key="paymentMethodsTitle">Donate Directly:</h3>
-                    <div class="payment-option">
-                        <div class="payment-info">
-                            <span class="emoji">💰</span> <strong data-lang-key="bkashNumberText">Bkash Personal:</strong> <span id="bkash-number">01318228418</span>
-                        </div>
-                        <button class="copy-btn" data-target="bkash-number" data-lang-key="copyButtonText">Copy</button>
-                    </div>
-                    <div class="payment-option">
-                        <div class="payment-info">
-                            <span class="emoji">💸</span> <strong data-lang-key="nagadNumberText">Nagad Personal:</strong> <span id="nagad-number">01837941711</span>
-                        </div>
-                        <button class="copy-btn" data-target="nagad-number" data-lang-key="copyButtonText">Copy</button>
-                    </div>
+            <div class="donation-options">
+                <h2>Choose Your Device to Donate 👇</h2>
+                <div class="button-group">
+                    <a href="https://mrsadury.github.io/Cosmicsupport/" class="btn-device btn-mobile" target="_blank" rel="noopener noreferrer">
+                        <span class="emoji">📱</span> Donate (Mobile)
+                    </a>
+                    <a href="https://mrsadury.github.io/Support2/" class="btn-device btn-tablet" target="_blank" rel="noopener noreferrer">
+                        <span class="emoji tablet-emoji">💻</span> Donate (Tablet)
+                    </a>
+                    <a href="https://mrsadury.github.io/Support-/" class="btn-device btn-pc" target="_blank" rel="noopener noreferrer">
+                        <span class="emoji">🖥️</span> Donate (PC)
+                    </a>
                 </div>
-            </section>
-        </div>
-    </main>
+            </div>
+        </main>
 
-    <footer>
-        <p data-lang-key="footerText">© 2024 Ayat's Halal Content. Made with <span class="emoji">💖</span></p>
-    </footer>
+        <footer>
+            <p class="terms-link">
+                By donating, you agree to our 📜 
+                <a href="https://mrsadury.github.io/PolicyofD/" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>.
+            </p>
+            <p>© <span id="currentYear"></span> Tech with Ayat. All rights reserved. Keep Coding & Creating! 🧑‍💻💡</p>
+        </footer>
+    </div>
 
-    <script src="js/lang.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>
