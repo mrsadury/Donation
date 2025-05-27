@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="navHome">Home - Ayat's Halal Support</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Support Ayat's ad-free Islamic content creation. Donate via Bkash or Nagad.">
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Twemoji -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo" data-lang-key="logoText">Ayat's Halal Content <span class="emoji">🌟</span></a>
+        <div class="header-controls">
+            <div class="lang-switch" id="lang-toggle">
+                <span id="lang-en" class="active-lang">EN</span>
+                <span id="lang-bn">BN</span>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html" class="active-nav" data-lang-key="navHome">Home</a></li>
+                <li><a href="about.html" data-lang-key="navAbout">About Me</a></li>
+                <li><a href="why-donate.html" data-lang-key="navWhyDonate">Why I Need Donation</a></li>
+                <li><a href="faq.html" data-lang-key="navFAQ">FAQ / Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <section class="welcome-section">
+                <div id="lottie-welcome" aria-label="Animated welcome gesture"></div>
+                <h1 id="welcome-text" data-lang-key="welcomeMessage">
+                    Assalamu Alaikum, I am Ayat! If you like my content, support me to keep going without relying on ads! 🌙💖
+                </h1>
+                <p id="bangla-intro" data-lang-key="banglaWelcome" style="display: none;">
+                    YouTube থেকে ইনকাম হারাম হতে পারে, তাই আমি অ্যাড-ফ্রি, কোয়ালিটি ইসলামিক ভিডিও বানাই—আপনারা যদি আমাকে সাহায্য করতে চান, এই ওয়েবসাইট থেকে ডোনেট করতে পারেন ইনশাআল্লাহ!
+                </p>
+            </section>
+
+            <section class="donate-section">
+                <h2 data-lang-key="donateTitle">Support My Work 🙏</h2>
+                <form id="donate-form">
+                    <div class="form-group">
+                        <label for="donor-name" data-lang-key="donorNameLabel">Your Name (Optional)</label>
+                        <input type="text" id="donor-name" name="donor-name" data-lang-key-placeholder="donorNamePlaceholder" placeholder="e.g., Abdullah">
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-description" data-lang-key="donorDescriptionLabel">Message (Optional)</label>
+                        <textarea id="donor-description" name="donor-description" data-lang-key-placeholder="donorDescriptionPlaceholder" placeholder="May Allah bless you!"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" data-lang-key="submitDonation">Send Support Note <span class="emoji">💌</span></button>
+                </form>
+                <div id="form-status"></div>
+
+                <div class="payment-methods">
+                    <h3 data-lang-key="paymentMethodsTitle">Donate Directly:</h3>
+                    <div class="payment-option">
+                        <div class="payment-info">
+                            <span class="emoji">💰</span> <strong data-lang-key="bkashNumberText">Bkash Personal:</strong> <span id="bkash-number">01318228418</span>
+                        </div>
+                        <button class="copy-btn" data-target="bkash-number" data-lang-key="copyButtonText">Copy</button>
+                    </div>
+                    <div class="payment-option">
+                        <div class="payment-info">
+                            <span class="emoji">💸</span> <strong data-lang-key="nagadNumberText">Nagad Personal:</strong> <span id="nagad-number">01837941711</span>
+                        </div>
+                        <button class="copy-btn" data-target="nagad-number" data-lang-key="copyButtonText">Copy</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p data-lang-key="footerText">© 2024 Ayat's Halal Content. Made with <span class="emoji">💖</span></p>
+    </footer>
+
+    <script src="js/lang.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
